@@ -76,8 +76,12 @@ WSGI_APPLICATION = 'brserver.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'budget_reddit',
+        'USER': config("DB_USER"),
+        'PASSWORD': config("DB_USER_PW"),
+        'HOST': config("DB_HOST"),
+        'PORT': config("DB_PORT"),
     }
 }
 
